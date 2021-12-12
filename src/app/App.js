@@ -1,15 +1,19 @@
 import React from 'react';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+
 import './app.scss';
 import './reset.scss';
-
-import CollectionCard from '../components/index';
+import Main from '../../pages/index';
 
 function App() {
   return (
-    <>
-      <h1>hello world</h1>
-      <CollectionCard />
-    </>
+    <HashRouter>
+      <div className='container' >
+        <Routes>
+          <Route path='/' element={<Main />} />
+        </Routes>
+      </div>
+    </HashRouter>
   );
 }
 
