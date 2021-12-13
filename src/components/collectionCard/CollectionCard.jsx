@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import './CollectionCard.scss';
+import './CollectionCard.less';
 
 export default function CollectionCard(item) {
   const { title, primary_photo_extras } = item.item;

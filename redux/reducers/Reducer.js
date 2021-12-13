@@ -9,7 +9,7 @@ const initialState = {
   keyAPI: 'f6146b5aea320305af01030c6fc04c59',
   userId: '48600090482@N01',
   page: 1,
-  totalCollections: null,
+  totalPages: null,
 };
 
 export const Reducer = (state = initialState, action) => {
@@ -23,6 +23,10 @@ export const Reducer = (state = initialState, action) => {
       };
     case 'SET_FETCHING':
       return { ...state, isFetching: payload };
+    case 'SET_PAGES':
+      return { ...state, totalPages: payload };
+    case 'SET_CURRENT_PAGE':
+      return { ...state, page: payload };
     default:
       return { ...state };
   }
