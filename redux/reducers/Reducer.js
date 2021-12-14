@@ -4,11 +4,11 @@
 const initialState = {
   collectionsOnPage: [],
   isFetching: true,
-  collectionId: null,
-  collection: [],
+  collectionTitle: '',
+  collectionDescription: '',
+  collectionPhoto: [],
   keyAPI: 'f6146b5aea320305af01030c6fc04c59',
   userId: '48600090482@N01',
-  page: 1,
   totalPages: null,
 };
 
@@ -19,6 +19,19 @@ export const Reducer = (state = initialState, action) => {
       return {
         ...state,
         collectionsOnPage: payload.photoset,
+        isFetching: false,
+      };
+      case 'SET_INFO_TO_COLLECTION':
+        const { description, title } = payload   
+      return {
+        ...state,
+        collectionDescription: description._content || '',
+        collectionTitle: title._content || '',
+      };
+    case 'SET_PHOTO_TO_COLLECTION':
+      return {
+        ...state,
+        collectionPhoto: payload,
         isFetching: false,
       };
     case 'SET_FETCHING':
