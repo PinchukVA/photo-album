@@ -9,7 +9,7 @@ import Collection from '../components/pages/Collection/Collection'
 const App = () => {
     return (
         <HashRouter>
-            <div className="container">
+            <div className="contain">
                 <Switch>
                      <Route exact path="/page/1" component={Main}/>
                      <Route exact path='/page/:currentPage' component={Main}/>

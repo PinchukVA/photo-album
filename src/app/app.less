@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
-.container {
+.contain {
   width: 100%;
   max-width: 320px;
   margin: 0px auto;
+
+  @media (max-width: 768px) and (min-width: 481px) {
+    max-width: 640px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 1140px;
+  }
 }

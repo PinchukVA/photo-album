@@ -22,3 +22,14 @@ export const setCurrentPage = (num) => ({
   type: 'SET_CURRENT_PAGE',
   payload: num,
 });
+export const openSlider = (num) => ({
+  type: 'SLIDER_OPEN',
+  payload: num,
+});
+export const closeSlider = () => ({
+  type: 'SLIDER_CLOSE',
+});
+export const switchSlide = (str) => ({
+  type: 'SWITCH_SLIDE',
+  payload: str,
+});

@@ -31,10 +31,12 @@ export default function Main() {
   return (<>
   {
      isFetching === false
-       ? <div>
-          {renderColletions(collectionsOnPage)}
+       ?<div className="main__wraper"> 
+          <div className="main__cards">
+            {renderColletions(collectionsOnPage)}
+          </div>
           <PaginationOutline pages={totalPages} currentpage={+currentPage} />
-       </div>
+        </div>
        : <img className='main__loader' src={loader} />
   }
 

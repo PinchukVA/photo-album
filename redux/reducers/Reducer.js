@@ -10,6 +10,8 @@ const initialState = {
   keyAPI: 'f6146b5aea320305af01030c6fc04c59',
   userId: '48600090482@N01',
   totalPages: null,
+  isSlider:false,
+  sliderStartIndex:0,
 };
 
 export const Reducer = (state = initialState, action) => {
@@ -33,6 +35,34 @@ export const Reducer = (state = initialState, action) => {
         ...state,
         collectionPhoto: payload,
         isFetching: false,
+      };
+    case 'SLIDER_OPEN':
+      window.scrollTo({
+        top: 105,
+        behavior: "smooth"
+      });
+      return {
+        ...state,
+        isSlider: true,
+        sliderStartIndex:payload,
+      };
+    case 'SLIDER_CLOSE':
+      
+      return {
+        ...state,
+        isSlider: false,
+        sliderStartIndex:0,
+      };
+    case 'SWITCH_SLIDE':
+      let currentIndex = 0;
+      if ( payload === 'next' ){
+        currentIndex =  state.sliderStartIndex + 1
+      }else{
+        currentIndex =  state.sliderStartIndex -1
+      }
+      return {
+        ...state,
+        sliderStartIndex:currentIndex,
       };
     case 'SET_FETCHING':
       return { ...state, isFetching: payload };

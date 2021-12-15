@@ -1,9 +1,17 @@
 .collection {
-  width: 320px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items:center;
+
+  @media (max-width: 768px) and (min-width: 481px) {
+    padding: 15px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 30px;
+  }
 
   .collection__return {
     padding: 15px;
@@ -29,8 +37,11 @@
   .collection__info{
     display: flex;
     width: 100%;
-    padding:20px;
+    padding:10px;
     flex-direction: column;
+    background-color: #f1f1f1;
+    margin-bottom: 35px;
+    border-radius: 8px;
 
     h2 {
       font-size: 24px;
@@ -49,13 +60,12 @@
   }
 
   .collection__gallery {
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
 
     img {
-      width: 90px;
-      height: 60px;
+      width: 80px;
+      height: 40px;
       margin: 5px;
       border-radius:2px;
       object-fit: cover;
