@@ -12,6 +12,10 @@ const initialState = {
   totalPages: null,
   isSlider:false,
   sliderStartIndex:0,
+  isSorted: false,
+  collectionSorted: [],
+  errorFetch: false,
+  filterText:'',
 };
 
 export const Reducer = (state = initialState, action) => {
@@ -47,7 +51,6 @@ export const Reducer = (state = initialState, action) => {
         sliderStartIndex:payload,
       };
     case 'SLIDER_CLOSE':
-      
       return {
         ...state,
         isSlider: false,
@@ -70,6 +73,18 @@ export const Reducer = (state = initialState, action) => {
       return { ...state, totalPages: payload };
     case 'SET_CURRENT_PAGE':
       return { ...state, page: payload };
+      case 'SORT_OFF':
+        return { ...state, isSorted: false };
+      case 'SORT_ON':
+        return {
+          ...state, 
+          collectionSorted: payload,
+          isSorted: true,
+         };
+      case 'SET_FILTR_TEXT':
+        return { ...state, filterText: payload }; 
+      case 'SET_ERROR_FETCH':
+        return { ...state, errorFetch: payload };   
     default:
       return { ...state };
   }

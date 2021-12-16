@@ -33,3 +33,18 @@ export const switchSlide = (str) => ({
   type: 'SWITCH_SLIDE',
   payload: str,
 });
+export const setErrorFetch = (bool) => ({
+  type: 'SET_ERROR_FETCH',
+  payload: bool,
+});
+export const sortOff = () => ({
+  type: 'SORT_OFF',
+});
+export const sortOn = (arr) => ({
+  type: 'SORT_ON',
+  payload: arr,
+});
+export const setFiltrText = (str) => ({
+  type: 'SET_FILTR_TEXT',
+  payload: str,
+});

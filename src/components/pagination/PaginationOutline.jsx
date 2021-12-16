@@ -14,11 +14,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-import { setCurrentPage }  from '../../../redux/actions/Actions'
+import { sortOff }  from '../../../redux/actions/Actions'
 
 export default function PaginationOutline({pages, currentpage}) {
   let history = useHistory();
   const handleSwitchPage = (num) =>{
+    dispatch(sortOff())
     history.push(`/page/${+num}`);
   }
   const dispatch = useDispatch();

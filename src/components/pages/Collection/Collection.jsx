@@ -8,13 +8,14 @@ import loader from '../../../static/images/svg/loader.svg';
 import { getInfoCollection } from '../../../api/collectionAPI';
 import {openSlider} from '../../../../redux/actions/Actions'
 import  Slider from '../../slider/Slider'
+import ErrorFetch from '../../errorFetch/ErrorFetch'
 
 export default function Collection(props) {
   const { collectionId } = useParams();
   const dispatch = useDispatch();
   const appState = useSelector((state) => state.Reducer);
   const {
-    isSlider, isFetching, keyAPI, userId, collectionTitle, collectionDescription, collectionPhoto
+    isSlider, isFetching, keyAPI, userId, collectionTitle, collectionDescription, collectionPhoto, errorFetch
   } = appState;
 
   const renderColletions = (arr) => {
@@ -28,6 +29,7 @@ export default function Collection(props) {
 
   return (
     <>
+    {errorFetch && <ErrorFetch/>}
      {
         isFetching === false
         ? <section className='collection'>
