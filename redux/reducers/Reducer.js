@@ -43,7 +43,7 @@ export const Reducer = (state = initialState, action) => {
     case 'SLIDER_OPEN':
       window.scrollTo({
         top: 105,
-        behavior: "smooth"
+        behavior: 'smooth'
       });
       return {
         ...state,

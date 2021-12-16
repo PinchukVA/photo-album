@@ -15,7 +15,14 @@ export default function Collection(props) {
   const dispatch = useDispatch();
   const appState = useSelector((state) => state.Reducer);
   const {
-    isSlider, isFetching, keyAPI, userId, collectionTitle, collectionDescription, collectionPhoto, errorFetch
+    isSlider, 
+    isFetching, 
+    keyAPI, 
+    userId, 
+    collectionTitle, 
+    collectionDescription, 
+    collectionPhoto, 
+    errorFetch
   } = appState;
 
   const renderColletions = (arr) => {
@@ -29,18 +36,18 @@ export default function Collection(props) {
 
   return (
     <>
-    {errorFetch && <ErrorFetch/>}
+    {errorFetch && <ErrorFetch />}
      {
         isFetching === false
         ? <section className='collection'>
         <div className='collection__return'>
-          <button onClick={()=>props.history.goBack()} className='return__button'><ArrowBackIosIcon/> Return back to collections</button>
+          <button onClick={()=>props.history.goBack()} className='return__button'><ArrowBackIosIcon /> Return back to collections</button>
         </div> 
         <div className='collection__info'>
           <h2>{collectionTitle}</h2>
           <p>{collectionDescription}</p>
         </div>
-        {isSlider && <Slider/>}
+        {isSlider && <Slider />}
         
         <div className='collection__photos'>
         <div className='collection__gallery'>

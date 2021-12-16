@@ -17,11 +17,11 @@ export default function Slider() {
 
   const renderImage = (arr, ind) => {
     return (
-      <div className="slider__wrap">
+      <div className='slider__wrap'>
         <img
-          className="slider__item"
+          className='slider__item'
           src={arr[ind].url_m}
-          alt={arr[ind].title || ""}
+          alt={arr[ind].title || ''}
         />
         <p>{arr[ind].title}</p>
       </div>
@@ -29,11 +29,11 @@ export default function Slider() {
   };
 
   return (
-    <section className="slider">
-      <div className="slider__close">
+    <section className='slider'>
+      <div className='slider__close'>
         <button className='slider__closeButton' onClick={()=>dispatch(closeSlider())} ><CloseIcon/></button>
       </div>
-      <div className="slider__nav">
+      <div className='slider__nav'>
         <button
           disabled={sliderStartIndex === 0}
           onClick={()=>dispatch(switchSlide('prev'))}

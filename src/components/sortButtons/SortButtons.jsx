@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, {useState}from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './SortButtons.less';
 import {sortOff, sortOn, setFiltrText } from '../../../redux/actions/Actions'
@@ -46,7 +46,7 @@ export default function SortButtons() {
   };
 
   const handleBlur = (e) => {
-    if (e.target.value === "") {
+    if (e.target.value === '') {
       dispatch(sortOff());
       return;
     }
@@ -60,16 +60,20 @@ export default function SortButtons() {
       <button onClick={()=>sortByName(collectionsOnPage)}>Name</button>
       </div>
       
-      <form onSubmit={handleFiltrList} className="sort__form">
-            <input
-             className="sort__name"
-              type="text"
-              placeholder="Write substr"
-              onChange={handleChangeFiltrText}
-              onBlur={handleBlur}
-            />
-            <input type="submit" value="Filter by name" className="sort__btn"/>
-          </form>
+      <form onSubmit={handleFiltrList} className='sort__form'>
+        <input
+          className='sort__name'
+          type='text'
+          placeholder='Write substr'
+          onChange={handleChangeFiltrText}
+          onBlur={handleBlur}
+        />
+        <input 
+          type='submit' 
+          value='Filter by name' 
+          className='sort__btn'
+        />
+      </form>
     </section>
   );
 }

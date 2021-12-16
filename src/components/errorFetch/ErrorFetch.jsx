@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import './ErrorFetch.less';
 
 import {setErrorFetch} from '../../../redux/actions/Actions';
+
 export default function ErrorFetch() {
   const dispatch =useDispatch()
 
@@ -15,7 +16,7 @@ export default function ErrorFetch() {
   return (
     <div className='error'>
        <h2> Ooops, something went wrong. Please, try again later </h2>
-      <button onClick={() => reloadPage()}> Reload Page</button>
+       <button onClick={() => reloadPage()}> Reload Page</button>
     </div>
   );
 }
