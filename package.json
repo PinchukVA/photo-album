@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "photo album. Used Flickr API. Showed photoset collection",
   "main": "index.js",
+  "homepage": "https://pinchukva.github.io/photo-album/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "author": "Vitali Pinchuck",
   "license": "ISC",
@@ -30,6 +34,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
     "axios": "^0.19.2",
+    "gh-pages": "^3.2.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
